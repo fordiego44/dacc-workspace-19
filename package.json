@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dacc-side-menu:build": "ng build dacc-side-menu",
+    "dacc-side-menu:lint": "ng lint dacc-side-menu",
+    "dacc-side-menu:test": "ng test dacc-side-menu --no-watch --no-progress --browsers=ChromeHeadless",
+    "dacc-side-menu:publish": "npm run dacc-side-menu:test && npm run dacc-side-menu:build && npm publish dist/dacc-side-menu/",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -23,15 +28,23 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.5",
     "@angular/cli": "^19.1.8",
     "@angular/compiler-cli": "^19.1.0",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "19.3.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.23.0",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "ng-packagr": "^19.2.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "8.27.0"
   }
 }
